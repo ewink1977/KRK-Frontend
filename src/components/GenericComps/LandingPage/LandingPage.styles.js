@@ -30,5 +30,21 @@ export const useStyles = makeStyles((theme) => ({
 		alignItems: 'center',
 		justifyContent: 'center',
 		marginTop: '1rem',
+		marginBottom: '1rem',
+	},
+	salesBox: {
+		minHeight: '450px',
+		margin: '0 1rem',
+	},
+	salesBoxTitle: {
+		marginBottom: '0.35rem',
+	},
+	salesMedia: {
+		width: '100%',
+		minHeight: '100px',
+	},
+	pitchContainer: {
+		minHeight: '300px',
+		backgroundColor: '#0d0d0d',
 	},
 }));
