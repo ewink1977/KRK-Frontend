@@ -43,8 +43,34 @@ export const useStyles = makeStyles((theme) => ({
 		width: '100%',
 		minHeight: '100px',
 	},
-	pitchContainer: {
-		minHeight: '300px',
+	ctaContainer: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'space-evenly',
 		backgroundColor: '#0d0d0d',
+		paddingTop: '1rem',
+		paddingBottom: '2rem',
+	},
+	ctaBox: {
+		borderColor: 'white',
+		borderWidth: '2px',
+		borderStyle: 'solid',
+		borderRadius: '15px',
+		minHeight: '300px',
+		padding: '1rem',
+	},
+	ctaHeader: {
+		color: 'white',
+		padding: '1rem',
+		textAlign: 'center',
+	},
+	ctaText: {
+		color: 'white',
+		padding: '1.1rem',
+		textAlign: 'justify',
+	},
+	ctaButtonContainer: {
+		display: 'flex',
+		justifyContent: 'space-around',
 	},
 }));

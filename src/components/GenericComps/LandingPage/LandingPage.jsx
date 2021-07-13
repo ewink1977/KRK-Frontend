@@ -9,9 +9,10 @@ import {
 	CardActions,
 	Button,
 } from '@material-ui/core';
-import Header from '../Header/Header';
+import Header from '../LandingHeader/LandingHeader';
+import Footer from '../LandingFooter/LandingFooter';
 
-import { useStyles } from './LandingPage.styles';
+import { useStyles } from './LandingPage.Styles';
 
 const LandingPage = () => {
 	const classes = useStyles();
@@ -177,9 +178,58 @@ const LandingPage = () => {
 					</Card>
 				</Grid>
 			</Grid>
-			<Grid container className={classes.pitchContainer}>
-				<h2>Final Pitch Here</h2>
+			<Grid container className={classes.ctaContainer}>
+				<Grid item md={12} lg={4} className={classes.ctaBox}>
+					<Typography variant='h3' className={classes.ctaHeader}>
+						Try KRK Out!
+					</Typography>
+					<Typography variant='body2' className={classes.ctaText}>
+						Would you like to take KRK for a spin? Please try out
+						the demo site by clicking the buttons below or the
+						buttons on the top menu! You can either create your own
+						account, which will default to give you the view of a
+						front-line worker at our fictional restaurant,
+						MgRonald's. If you don't want to go through all that
+						trouble, you can use the demo account that is already
+						set up. User name is 'testuser' and the password is
+						'testpassword' (without the quotes).
+					</Typography>
+					<Grid container className={classes.ctaButtonContainer}>
+						<Button size='small' color='secondary'>
+							LOGIN
+						</Button>
+						<Button size='small' color='secondary'>
+							REGISTER NEW ACCOUNT
+						</Button>
+					</Grid>
+				</Grid>
+				<Grid item md={12} lg={4} className={classes.ctaBox}>
+					<Typography variant='h3' className={classes.ctaHeader}>
+						KRK For Your Biz!
+					</Typography>
+					<Typography variant='body2' className={classes.ctaText}>
+						Would you like to have your own KRK Employee Bulletin
+						Board System? Well, then you will have to hire me as a
+						web developer and have me build it for you! KRK isn't
+						sold as SaaS right now (but who knows what the future
+						might hold). You can look into having me, Erin Winking,
+						as an employee by checking out my profile, GitHub, or
+						emailing me!
+					</Typography>
+					<Grid container className={classes.ctaButtonContainer}>
+						<Button size='small' color='secondary'>
+							MY PROFILE
+						</Button>
+						<Button size='small' color='secondary'>
+							MY GITHUB
+						</Button>
+						<Button size='small' color='secondary'>
+							ERIN@DOUGLASAVENUE.COM
+						</Button>
+					</Grid>
+				</Grid>
 			</Grid>
+			<Footer />
 		</div>
 	);
 };

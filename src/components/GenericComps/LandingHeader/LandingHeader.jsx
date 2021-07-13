@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Grid, Button } from '@material-ui/core';
-import { useStyles } from './Header.styles';
+import { useStyles } from './LandingHeader.Styles';
 
 const Header = () => {
 	const classes = useStyles();
