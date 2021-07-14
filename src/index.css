@@ -2,5 +2,15 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Roboto';
+	font-family: 'Roboto', sans-serif;
 }
+
+/* 
+Fonts:
+font-family: 'Anton', sans-serif;
+font-family: 'Bowlby One SC', cursive;
+font-family: 'Kanit', sans-serif;
+font-family: 'Krona One', sans-serif;
+font-family: 'Roboto', sans-serif;
+
+*/
