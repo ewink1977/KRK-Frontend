@@ -10,6 +10,7 @@ import {
 	useMediaQuery,
 	useTheme,
 } from '@material-ui/core';
+import TestUserInfo from '../TestUserInfo/TestUserInfo';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -25,40 +26,8 @@ const Login = (props) => {
 		<Container maxWidth='lg' className={classes.container}>
 			<Hidden smDown>
 				<Grid item md={5} className={classes.loginLeft}>
-					<Grid item className={classes.loginTesterBlock}>
-						<Typography
-							variant='h4'
-							className={classes.testerBlockHeader}>
-							Test Users!
-						</Typography>
-						<Typography
-							variant='body2'
-							className={classes.testerBlockText}>
-							If you want to take a look around the system, please
-							feel free to create an account. You can log in with
-							the a test user account, username{' '}
-							<strong>testuser</strong> and the password{' '}
-							<strong>testuserpassword</strong>.
-						</Typography>
-						<Typography
-							variant='body2'
-							className={classes.testerBlockText}>
-							This will give you basic user access which will let
-							you use the Time Management System, post messages,
-							reply to messages, and view events!
-						</Typography>
-						<Typography
-							variant='body2'
-							className={classes.testerBlockText}>
-							You can check out all of the features via the{' '}
-							<a
-								href='https://douglasavenue.com/ebbsdoc/documentation.html'
-								target='_blank'
-								rel='noopener noreferrer'>
-								project's documentation
-							</a>
-							!
-						</Typography>
+					<Grid item className={classes.loginTestUserBlock}>
+						<TestUserInfo />
 					</Grid>
 				</Grid>
 			</Hidden>
@@ -139,40 +108,8 @@ const Login = (props) => {
 						<Link to='/register'>register here</Link>!
 					</Typography>
 					<Hidden mdUp>
-						<Grid item className={classes.loginTesterSmall}>
-							<Typography
-								variant='h4'
-								className={classes.testerBlockHeader}>
-								Test Users!
-							</Typography>
-							<Typography
-								variant='body2'
-								className={classes.testerBlockText}>
-								If you want to take a look around the system,
-								please feel free to create an account. You can
-								log in with the a test user account, username{' '}
-								<strong>testuser</strong> and the password{' '}
-								<strong>testuserpassword</strong>.
-							</Typography>
-							<Typography
-								variant='body2'
-								className={classes.testerBlockText}>
-								This will give you basic user access which will
-								let you use the Time Management System, post
-								messages, reply to messages, and view events!
-							</Typography>
-							<Typography
-								variant='body2'
-								className={classes.testerBlockText}>
-								You can check out all of the features via the{' '}
-								<a
-									href='https://douglasavenue.com/ebbsdoc/documentation.html'
-									target='_blank'
-									rel='noopener noreferrer'>
-									project's documentation
-								</a>
-								!
-							</Typography>
+						<Grid item className={classes.loginTestUserBlockMob}>
+							<TestUserInfo />
 						</Grid>
 					</Hidden>
 				</Grid>

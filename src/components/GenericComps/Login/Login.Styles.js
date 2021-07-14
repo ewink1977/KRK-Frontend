@@ -18,14 +18,14 @@ export const useStyles = makeStyles((theme) => ({
 		backgroundRepeat: 'no-repeat',
 		minHeight: '100%',
 	},
-	loginTesterBlock: {
+	loginTestUserBlock: {
 		alignSelf: 'center',
 		backgroundColor: 'aliceblue',
 		opacity: '80%',
 		padding: '1rem',
 		maxWidth: '100%',
 	},
-	loginTesterSmall: {
+	loginTestUserBlockMob: {
 		alignSelf: 'center',
 		width: '100%',
 		backgroundColor: 'aliceblue',
@@ -34,17 +34,6 @@ export const useStyles = makeStyles((theme) => ({
 		borderColor: 'black',
 		borderWidth: '1px',
 		borderStyle: 'solid',
-	},
-	testerBlockHeader: {
-		marginBottom: '15px',
-		textAlign: 'center',
-		textTransform: 'uppercase',
-		fontFamily: "'Bowlby One SC', cursive",
-	},
-	testerBlockText: {
-		textAlign: 'justify',
-		paddingTop: '2px',
-		paddingBottom: '2px',
 	},
 	loginRight: {
 		display: 'flex',
