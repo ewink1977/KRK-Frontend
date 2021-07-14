@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core';
-import { blueGrey, green, grey } from '@material-ui/core/colors';
+import { grey, blueGrey } from '@material-ui/core/colors';
 
 export const useStyles = makeStyles((theme) => ({
 	container: {
@@ -10,75 +10,46 @@ export const useStyles = makeStyles((theme) => ({
 		borderRadius: '15px',
 		minHeight: '100vh',
 	},
-	loginLeft: {
-		display: 'flex',
+	registerLeft: {
 		backgroundImage:
-			"url('https://douglasavenue.com/bbsimg/mgronald1.jpg')",
+			"url('https://douglasavenue.com/bbsimg/mgronald2.jpg')",
 		backgroundPosition: 'top left',
 		backgroundRepeat: 'no-repeat',
 		minHeight: '100%',
 	},
-	loginTesterBlock: {
-		alignSelf: 'center',
-		backgroundColor: 'aliceblue',
-		opacity: '80%',
-		padding: '1rem',
-		maxWidth: '100%',
-	},
-	loginTesterSmall: {
-		alignSelf: 'center',
-		width: '100%',
-		backgroundColor: 'aliceblue',
-		padding: '1rem',
-		maxWidth: '100%',
-		borderColor: 'black',
-		borderWidth: '1px',
-		borderStyle: 'solid',
-	},
-	testerBlockHeader: {
-		marginBottom: '15px',
-		textAlign: 'center',
-		textTransform: 'uppercase',
-		fontFamily: "'Bowlby One SC', cursive",
-	},
-	testerBlockText: {
-		textAlign: 'justify',
-		paddingTop: '2px',
-		paddingBottom: '2px',
-	},
-	loginRight: {
+	registerRight: {
 		display: 'flex',
 		flexDirection: 'column',
 		minHeight: '100%',
 		width: '100%',
 	},
-	loginHeaderBlock: {
+	registerHeaderBlock: {
 		padding: '2rem',
 		marginBottom: '1rem',
 	},
-	loginBlockHeaderMd: {
+	registerBlockHeaderMd: {
 		textAlign: 'center',
 		fontFamily: "'Krona One', sans-serif",
 		fontSize: '4.8rem',
 		letterSpacing: '0.09rem',
 	},
-	loginBlockHeaderSm: {
+	registerBlockHeaderSm: {
 		textAlign: 'center',
 		fontFamily: "'Krona One', sans-serif",
 		fontSize: '2.8rem',
 		letterSpacing: '0.09rem',
 	},
-	loginBlockSubhead: {
+	registerBlockSubhead: {
 		fontWeight: '400',
 		fontSize: '1rem',
 		textTransform: 'uppercase',
 		textAlign: 'center',
 		fontFamily: "'Kanit', sans-serif",
-		letterSpacing: '0.23rem',
-		marginTop: '0.25rem',
+		letterSpacing: '0.13rem',
 		color: grey[500],
+		marginTop: '0.3rem',
 	},
-	loginFormBlock: {
+	registerFormBlock: {
 		padding: '0.5rem 1rem',
 		borderStyle: 'solid',
 		borderColor: 'black',
@@ -87,31 +58,19 @@ export const useStyles = makeStyles((theme) => ({
 		boxShadow: '0 .5rem 1rem rgba(0,0,0,.15)',
 		margin: '0.5rem',
 	},
-	loginFormHeader: {
+	registerFormHeader: {
 		fontWeight: '700',
+		fontSize: '2rem',
 	},
-	loginFormWarning: {
-		color: 'darkred',
-		fontWeight: '700',
-		textAlign: 'center',
-	},
-	loginButtonContainer: {
+	registerButtonContainer: {
 		display: 'flex',
 		justifyContent: 'flex-end',
 		alignItems: 'center',
 	},
-	loginButton: {
+	registerButton: {
 		marginLeft: '0.5rem',
 	},
-	loginButtonSubmit: {
-		marginLeft: '0.5rem',
-		color: theme.palette.getContrastText(green[500]),
-		backgroundColor: green[500],
-		'&:hover': {
-			backgroundColor: green[700],
-		},
-	},
-	loginHelper: {
+	registerHelper: {
 		fontSize: '0.8rem',
 		color: blueGrey[600],
 		margin: '0.5rem 0',
