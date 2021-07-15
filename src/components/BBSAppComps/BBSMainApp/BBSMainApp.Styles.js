@@ -23,9 +23,8 @@ export const useStyles = makeStyles((theme) => ({
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'flex-start',
-		backgroundColor: grey[400],
-		minHeight: '100vh',
 		width: '100%',
+		minHeight: '100vh',
 	},
 	bbsRightColumn: {
 		display: 'flex',

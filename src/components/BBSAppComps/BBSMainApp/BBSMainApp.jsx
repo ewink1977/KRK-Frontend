@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Container, Grid, AppBar, Typography } from '@material-ui/core';
+import Post from '../../PostComps/Post/Post';
 import { useStyles } from './BBSMainApp.Styles';
 
 const BBSMainApp = () => {
@@ -18,7 +19,9 @@ const BBSMainApp = () => {
 			</AppBar>
 			<Container fixed className={classes.container}>
 				<Grid item md={12} lg={6} className={classes.bbsLeftColumn}>
-					<h2>LEFT</h2>
+					<Post />
+					<Post />
+					<Post />
 				</Grid>
 				<Grid item md={12} lg={6} className={classes.bbsRightColumn}>
 					<h2>RIGHT</h2>
