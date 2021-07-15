@@ -48,6 +48,6 @@ export const useStyles = makeStyles((theme) => ({
 		flexDirection: 'row',
 		justifyContent: 'space-evenly',
 		alignItems: 'center',
-		padding: '0.2rem',
+		padding: '0.2rem 0.2rem 0px 0.2rem!important',
 	},
 }));

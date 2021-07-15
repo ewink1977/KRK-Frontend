@@ -33,6 +33,5 @@ export const useStyles = makeStyles((theme) => ({
 		justifyContent: 'flex-start',
 		minHeight: '100vh',
 		width: '100%',
-		backgroundColor: grey[500],
 	},
 }));
