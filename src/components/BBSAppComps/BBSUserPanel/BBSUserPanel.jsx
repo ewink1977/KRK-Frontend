@@ -1,5 +1,5 @@
 import { Grid, Typography, Button } from '@material-ui/core';
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { useStyles } from './BBSUserPanel.Styles';
 

@@ -1,14 +1,9 @@
 import React, { Fragment } from 'react';
-import {
-	Container,
-	Grid,
-	AppBar,
-	Typography,
-	Divider,
-} from '@material-ui/core';
+import { Container, Grid, AppBar, Typography } from '@material-ui/core';
 import Post from '../../PostComps/Post/Post';
 import { useStyles } from './BBSMainApp.Styles';
 import BBSUserPanel from '../BBSUserPanel/BBSUserPanel';
+import BBSEventSummary from '../BBSEventSummary/BBSEventSummary';
 
 const BBSMainApp = () => {
 	const classes = useStyles();
@@ -32,9 +27,7 @@ const BBSMainApp = () => {
 				</Grid>
 				<Grid item md={12} lg={6} className={classes.bbsRightColumn}>
 					<BBSUserPanel />
-					<Divider variant='fullWidth' light />
-					<h3>Events</h3>
-					<Divider variant='middle' />
+					<BBSEventSummary />
 					<h3>Post Box</h3>
 				</Grid>
 			</Container>

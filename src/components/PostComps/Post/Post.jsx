@@ -6,8 +6,11 @@ import {
 	Typography,
 	Divider,
 	Hidden,
+	IconButton,
 } from '@material-ui/core';
-import { Reply, Favorite, Info } from '@material-ui/icons';
+import Reply from '@material-ui/icons/Reply';
+import Favorite from '@material-ui/icons/Favorite';
+import Info from '@material-ui/icons/Info';
 import { blue, pink, red } from '@material-ui/core/colors';
 import { Link } from 'react-router-dom';
 import { useStyles } from './Post.Styles';
@@ -46,8 +49,15 @@ const Post = () => {
 				</CardContent>
 				<Divider variant='middle' />
 				<CardContent className={classes.postFooter}>
-					<Reply fontSize='large' style={{ color: blue[900] }} />
-					<Favorite fontSize='large' style={{ color: pink[500] }} />
+					<IconButton>
+						<Reply fontSize='large' style={{ color: blue[900] }} />
+					</IconButton>
+					<IconButton>
+						<Favorite
+							fontSize='large'
+							style={{ color: pink[500] }}
+						/>
+					</IconButton>
 					<Info fontSize='large' style={{ color: red[900] }} />
 				</CardContent>
 			</Card>
