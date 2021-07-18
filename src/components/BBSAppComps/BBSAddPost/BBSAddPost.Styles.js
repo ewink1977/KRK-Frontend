@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import { blueGrey } from '@material-ui/core/colors';
 
 export const useStyles = makeStyles((theme) => ({
-	eventSummaryContainer: {
+	addPostContainer: {
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'flex-start',
@@ -14,17 +14,28 @@ export const useStyles = makeStyles((theme) => ({
 		margin: '0.5rem 0.5rem',
 		padding: '0.66rem',
 		width: '100%',
-		minHeight: '300px',
+		minHeight: '200px',
 	},
-	eventHeader: {
+	addPostHeader: {
 		fontFamily: "'Khula', sans-serif",
 		fontWeight: '800',
 	},
-	eventSummaryButton: {
+	addPostForm: {
 		display: 'flex',
+		flexDirection: 'column',
+		width: '97%',
+		margin: '0.5rem',
+		justifyContent: 'flex-start',
+		alignItems: 'center',
+	},
+	addPostButtonRow: {
+		display: 'flex',
+		width: '100%',
+		flexDirection: 'row',
 		justifyContent: 'flex-end',
 		alignItems: 'center',
-		padding: '1rem',
-		width: 'inherit',
+	},
+	addPostFormControl: {
+		marginLeft: '0.25rem',
 	},
 }));

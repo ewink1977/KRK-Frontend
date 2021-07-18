@@ -4,6 +4,7 @@ import Post from '../../PostComps/Post/Post';
 import { useStyles } from './BBSMainApp.Styles';
 import BBSUserPanel from '../BBSUserPanel/BBSUserPanel';
 import BBSEventSummary from '../BBSEventSummary/BBSEventSummary';
+import BBSAddPost from '../BBSAddPost/BBSAddPost';
 
 const BBSMainApp = () => {
 	const classes = useStyles();
@@ -28,7 +29,7 @@ const BBSMainApp = () => {
 				<Grid item md={12} lg={6} className={classes.bbsRightColumn}>
 					<BBSUserPanel />
 					<BBSEventSummary />
-					<h3>Post Box</h3>
+					<BBSAddPost />
 				</Grid>
 			</Container>
 		</Fragment>
