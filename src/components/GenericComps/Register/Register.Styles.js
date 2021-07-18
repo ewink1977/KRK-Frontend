@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import { grey, blueGrey } from '@material-ui/core/colors';
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles(() => ({
 	container: {
 		display: 'flex',
 		justifyContent: 'flex-start',

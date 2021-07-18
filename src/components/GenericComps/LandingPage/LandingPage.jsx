@@ -10,7 +10,7 @@ import {
 	Button,
 } from '@material-ui/core';
 import Header from '../LandingHeader/LandingHeader';
-import Footer from '../LandingFooter/LandingFooter';
+import Footer from '../Footer/Footer';
 
 import { useStyles } from './LandingPage.Styles';
 

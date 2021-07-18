@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import { blueGrey } from '@material-ui/core/colors';
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles(() => ({
 	eventSummaryContainer: {
 		display: 'flex',
 		flexDirection: 'column',
