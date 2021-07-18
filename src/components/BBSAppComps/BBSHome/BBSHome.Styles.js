@@ -2,14 +2,6 @@ import { makeStyles } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
 
 export const useStyles = makeStyles((theme) => ({
-	appBar: {
-		display: 'flex',
-		flexDirection: 'row',
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		backgroundColor: grey[900],
-		padding: '0.5rem 3rem',
-	},
 	container: {
 		display: 'flex',
 		flexWrap: 'wrap-reverse',
