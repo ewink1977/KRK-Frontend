@@ -4,7 +4,7 @@ import { Container, Grid } from '@material-ui/core';
 import Post from '../../PostComps/Post/Post';
 import BBSUserPanel from '../BBSUserPanel/BBSUserPanel';
 import BBSEventSummary from '../BBSEventSummary/BBSEventSummary';
-import BBSAddPost from '../BBSAddPost/BBSAddPost';
+import AddPost from '../../PostComps/AddPost/AddPost';
 
 const BBSHome = () => {
 	const classes = useStyles();
@@ -18,7 +18,7 @@ const BBSHome = () => {
 			<Grid item md={12} lg={6} className={classes.bbsRightColumn}>
 				<BBSUserPanel />
 				<BBSEventSummary />
-				<BBSAddPost />
+				<AddPost />
 			</Grid>
 		</Container>
 	);

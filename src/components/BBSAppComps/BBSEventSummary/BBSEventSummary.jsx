@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Grid, Typography, Button } from '@material-ui/core';
 import { useStyles } from './BBSEventSummary.Styles';
@@ -14,7 +15,12 @@ const BBSEventSummary = () => {
 			</Typography>
 			<EventCard />
 			<Grid item className={classes.eventSummaryButton}>
-				<Button variant='outlined' color='primary' size='large'>
+				<Button
+					variant='outlined'
+					color='primary'
+					size='large'
+					component={Link}
+					to='/bbs/events'>
 					SEE ALL EVENTS
 				</Button>
 			</Grid>

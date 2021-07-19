@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
 	AppBar,
 	Grid,
@@ -13,7 +14,10 @@ const MainHeader = () => {
 	return (
 		<AppBar position='sticky' className={classes.appBar}>
 			<Grid item>
-				<IconButton style={{ padding: '6px' }}>
+				<IconButton
+					style={{ padding: '6px' }}
+					component={Link}
+					to='/bbs'>
 					<img
 						src='https://cdn.douglasavenue.com/krk/media/img/krk-icon.png'
 						alt='KRK Logo'

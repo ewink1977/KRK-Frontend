@@ -9,9 +9,9 @@ import {
 	Select,
 	MenuItem,
 } from '@material-ui/core';
-import { useStyles } from './BBSAddPost.Styles';
+import { useStyles } from './AddPost.Styles';
 
-const BBSAddPost = () => {
+const AddPost = () => {
 	const classes = useStyles();
 	return (
 		<Grid container className={classes.addPostContainer}>
@@ -79,4 +79,4 @@ const BBSAddPost = () => {
 	);
 };
 
-export default BBSAddPost;
+export default AddPost;

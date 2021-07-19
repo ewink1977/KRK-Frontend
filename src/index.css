@@ -16,13 +16,13 @@ body {
 
 a {
 	text-decoration: none;
-	color: #b71c1c;
+	color: #2c53ff;
 	font-weight: 500;
 }
 
 a:hover {
 	text-decoration: dotted;
-	color: #ef5350;
+	color: #617eff;
 }
 
 /* 

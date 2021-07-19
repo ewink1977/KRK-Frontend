@@ -44,7 +44,8 @@ const Post = () => {
 				</CardContent>
 				<CardContent className={classes.postInformation}>
 					<Typography variant='caption' align='left'>
-						<Link to='/bbs'>Saturday, Feb. 20, 2021 @ 8:58 PM</Link>
+						<Link to='/bbs'>Saturday, Feb. 20, 2021 @ 8:58 PM</Link>{' '}
+						| Delete Post
 					</Typography>
 				</CardContent>
 				<Divider variant='middle' />

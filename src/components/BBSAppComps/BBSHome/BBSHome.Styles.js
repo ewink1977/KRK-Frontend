@@ -1,13 +1,11 @@
 import { makeStyles } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles(() => ({
 	container: {
 		display: 'flex',
 		flexWrap: 'wrap-reverse',
 		justifyContent: 'center',
 		alignItems: 'flex-start',
-		backgroundColor: grey[100],
 		minHeight: '100vh',
 	},
 	bbsLeftColumn: {
