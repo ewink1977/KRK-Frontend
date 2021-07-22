@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import {
 	Typography,
 	TextField,
@@ -10,9 +11,34 @@ import {
 	MenuItem,
 } from '@material-ui/core';
 import { useStyles } from './AddPost.Styles';
+import { createPost } from '../../../actions/posts';
 
 const AddPost = () => {
+	const dispatch = useDispatch();
+
+	const [postData, setPostData] = useState({
+		content: '',
+		distribution: '',
+		priority: '',
+		author: 1,
+	});
 	const classes = useStyles();
+
+	const clear = () => {
+		setPostData({
+			content: '',
+			distribution: '',
+			priority: '',
+			author: 1,
+		});
+	};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		dispatch(createPost(postData));
+		clear();
+	};
+
 	return (
 		<Grid container className={classes.addPostContainer}>
 			<Typography
@@ -21,7 +47,7 @@ const AddPost = () => {
 				className={classes.addPostHeader}>
 				Add A Post!
 			</Typography>
-			<form style={{ width: '100%' }}>
+			<form style={{ width: '100%' }} onSubmit={handleSubmit}>
 				<Grid container className={classes.addPostForm}>
 					<TextField
 						label='Type your message here...'
@@ -30,6 +56,13 @@ const AddPost = () => {
 						fullWidth
 						variant='outlined'
 						helperText='Maximum of 255 characters!'
+						value={postData.content}
+						onChange={(e) =>
+							setPostData({
+								...postData,
+								content: e.target.value,
+							})
+						}
 					/>
 					<Grid item className={classes.addPostButtonRow}>
 						<FormControl
@@ -43,12 +76,22 @@ const AddPost = () => {
 							<Select
 								labelId='distribution'
 								id='select-distribution'
-								label='Distribution'>
-								<MenuItem>Storewide</MenuItem>
-								<MenuItem>Department One</MenuItem>
-								<MenuItem>Department Two</MenuItem>
-								<MenuItem>Department Three</MenuItem>
-								<MenuItem>Department Four</MenuItem>
+								label='Distribution'
+								value={postData.distribution}
+								onChange={(e) =>
+									setPostData(
+										{
+											...postData,
+											distribution: e.target.value,
+										},
+										console.log(postData)
+									)
+								}>
+								<MenuItem value={9}>Storewide</MenuItem>
+								<MenuItem value={1}>Department One</MenuItem>
+								<MenuItem value={2}>Department Two</MenuItem>
+								<MenuItem value={3}>Department Three</MenuItem>
+								<MenuItem value={4}>Department Four</MenuItem>
 							</Select>
 						</FormControl>
 						<FormControl
@@ -60,17 +103,36 @@ const AddPost = () => {
 							<Select
 								labelId='priority'
 								id='select-priority'
-								label='Priority'>
-								<MenuItem>Normal</MenuItem>
-								<MenuItem>Sticky</MenuItem>
+								label='Priority'
+								value={postData.priority}
+								onChange={(e) =>
+									setPostData(
+										{
+											...postData,
+											priority: e.target.value,
+										},
+										console.log(postData)
+									)
+								}>
+								<MenuItem value={1}>Normal</MenuItem>
+								<MenuItem value={2}>Sticky</MenuItem>
 							</Select>
 						</FormControl>
 						<Button
 							variant='outlined'
 							color='primary'
-							size='large'
-							className={classes.addPostFormControl}>
+							size='small'
+							className={classes.addPostFormControl}
+							type='submit'>
 							Submit Post
+						</Button>
+						<Button
+							variant='outlined'
+							color='secondary'
+							size='small'
+							className={classes.addPostFormControl}
+							onClick={clear}>
+							Clear
 						</Button>
 					</Grid>
 				</Grid>
