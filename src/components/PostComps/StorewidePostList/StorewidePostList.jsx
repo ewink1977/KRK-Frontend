@@ -4,24 +4,20 @@ import { CircularProgress } from '@material-ui/core';
 
 import Post from '../Post/Post';
 
-const PostList = () => {
+const StorewidePostList = () => {
 	const posts = useSelector((state) => state.posts);
-
-	console.log(posts);
 
 	return !posts.length ? (
 		<CircularProgress />
 	) : (
 		<Fragment>
 			{posts
-				.slice()
-				.filter((post) => post.priority === 1)
-				.reverse()
-				.map((filteredPost) => (
-					<Post key={filteredPost.id} post={filteredPost} />
+				.filter((post) => post.department === 9)
+				.map((storewidePost) => (
+					<Post key={storewidePost.id} post={storewidePost} />
 				))}
 		</Fragment>
 	);
 };
 
-export default PostList;
+export default StorewidePostList;

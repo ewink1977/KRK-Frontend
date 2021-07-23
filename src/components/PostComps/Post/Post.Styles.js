@@ -4,11 +4,17 @@ export const useStyles = makeStyles(() => ({
 	postBody: {
 		display: 'flex',
 		flexDirection: 'column',
-		justifyContent: 'flex-start',
+		justifyContent: 'space-between',
 		width: '90%',
 		padding: '0.25rem',
 		margin: '0.5rem 0.5rem',
 		minHeight: '230px',
+	},
+	sticky: {
+		border: '2px solid red',
+	},
+	storewide: {
+		border: '2px solid yellow',
 	},
 	postHeader: {
 		display: 'flex',
@@ -49,5 +55,7 @@ export const useStyles = makeStyles(() => ({
 		justifyContent: 'space-evenly',
 		alignItems: 'center',
 		padding: '0.2rem 0.2rem 0px 0.2rem!important',
+		position: 'relative',
+		bottom: '0',
 	},
 }));

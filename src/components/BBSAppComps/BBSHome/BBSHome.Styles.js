@@ -5,7 +5,7 @@ export const useStyles = makeStyles(() => ({
 		display: 'flex',
 		flexWrap: 'wrap-reverse',
 		justifyContent: 'center',
-		alignItems: 'flex-start',
+		alignItems: 'start',
 		minHeight: '100vh',
 	},
 	bbsLeftColumn: {

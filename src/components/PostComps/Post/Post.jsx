@@ -8,6 +8,7 @@ import {
 	Hidden,
 	IconButton,
 } from '@material-ui/core';
+import moment from 'moment';
 import Reply from '@material-ui/icons/Reply';
 import Favorite from '@material-ui/icons/Favorite';
 import Info from '@material-ui/icons/Info';
@@ -15,11 +16,14 @@ import { blue, pink, red } from '@material-ui/core/colors';
 import { Link } from 'react-router-dom';
 import { useStyles } from './Post.Styles';
 
-const Post = () => {
+const Post = ({ post }) => {
 	const classes = useStyles();
 	return (
 		<Fragment>
-			<Card className={classes.postBody}>
+			<Card
+				className={`${classes.postBody} ${
+					post.priority === 2 ? classes.sticky : ''
+				}`}>
 				<CardContent className={classes.postHeader}>
 					<Avatar
 						className={classes.postHeaderAvatar}
@@ -36,15 +40,15 @@ const Post = () => {
 					</Hidden>
 				</CardContent>
 				<CardContent className={classes.postContent}>
-					<Typography variant='body1'>
-						Hey hey, MgRonald's staff! Did you know MgRonald's is a
-						fake McDonald's used in anime? Now you do! Boy, I love
-						anime almost as much as coding!
-					</Typography>
+					<Typography variant='body1'>{post.content}</Typography>
 				</CardContent>
 				<CardContent className={classes.postInformation}>
 					<Typography variant='caption' align='left'>
-						<Link to='/bbs'>Saturday, Feb. 20, 2021 @ 8:58 PM</Link>{' '}
+						<Link to={`/bbs/post/${post.id}`}>
+							{moment(post.created_at).format(
+								'dddd, MMMM Do YYYY, h:mm:ss a'
+							)}
+						</Link>{' '}
 						| Delete Post
 					</Typography>
 				</CardContent>

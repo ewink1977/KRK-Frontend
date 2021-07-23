@@ -9,6 +9,7 @@ import BBSUserPanel from '../BBSUserPanel/BBSUserPanel';
 import BBSEventSummary from '../BBSEventSummary/BBSEventSummary';
 import AddPost from '../../PostComps/AddPost/AddPost';
 import PostList from '../../PostComps/PostList/PostList';
+import StickyPostList from '../../PostComps/StickyPostList/StickyPostList';
 
 const BBSHome = () => {
 	const classes = useStyles();
@@ -21,6 +22,7 @@ const BBSHome = () => {
 	return (
 		<Container fixed className={classes.container}>
 			<Grid item md={12} lg={6} className={classes.bbsLeftColumn}>
+				<StickyPostList />
 				<PostList />
 			</Grid>
 			<Grid item md={12} lg={6} className={classes.bbsRightColumn}>

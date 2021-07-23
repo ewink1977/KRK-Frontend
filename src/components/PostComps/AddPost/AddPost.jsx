@@ -119,7 +119,7 @@ const AddPost = () => {
 							</Select>
 						</FormControl>
 						<Button
-							variant='outlined'
+							variant='contained'
 							color='primary'
 							size='small'
 							className={classes.addPostFormControl}
@@ -127,7 +127,7 @@ const AddPost = () => {
 							Submit Post
 						</Button>
 						<Button
-							variant='outlined'
+							variant='contained'
 							color='secondary'
 							size='small'
 							className={classes.addPostFormControl}
