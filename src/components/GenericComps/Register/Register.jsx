@@ -59,22 +59,6 @@ const Register = () => {
 							variant='outlined'
 						/>
 						<TextField
-							id='firstName'
-							label='First Name*'
-							fullWidth
-							margin='dense'
-							InputLabelProps={{ shrink: true }}
-							variant='outlined'
-						/>
-						<TextField
-							id='lastName'
-							label='Last Name*'
-							fullWidth
-							margin='dense'
-							InputLabelProps={{ shrink: true }}
-							variant='outlined'
-						/>
-						<TextField
 							id='email'
 							label='Email Address*'
 							type='email'
