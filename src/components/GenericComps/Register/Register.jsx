@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import {
 	Container,
 	Grid,
@@ -16,6 +17,29 @@ import PropTypes from 'prop-types';
 import { useStyles } from './Register.Styles';
 
 const Register = () => {
+	const dispatch = useDispatch();
+
+	const [registerData, setRegisterData] = useState({
+		username: '',
+		email: '',
+		password: '',
+		password2: '',
+	});
+
+	const clear = () => {
+		setRegisterData({
+			username: '',
+			email: '',
+			password: '',
+			password2: '',
+		});
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log(registerData)
+	}
+
 	const classes = useStyles();
 	// Gotta shrink that header text to keep smaller screens looking PHRESH!
 	const theme = useTheme();
@@ -57,6 +81,13 @@ const Register = () => {
 							margin='dense'
 							InputLabelProps={{ shrink: true }}
 							variant='outlined'
+							value={registerData.username}
+							onChange={(e) =>
+								setRegisterData({
+									...registerData,
+									username: e.target.value,
+								})
+							}
 						/>
 						<TextField
 							id='email'
@@ -66,6 +97,13 @@ const Register = () => {
 							margin='dense'
 							InputLabelProps={{ shrink: true }}
 							variant='outlined'
+							value={registerData.email}
+							onChange={(e) =>
+								setRegisterData({
+									...registerData,
+									email: e.target.value,
+								})
+							}
 						/>
 						<TextField
 							id='password'
@@ -77,6 +115,13 @@ const Register = () => {
 							margin='dense'
 							InputLabelProps={{ shrink: true }}
 							variant='outlined'
+							value={registerData.password}
+							onChange={(e) =>
+								setRegisterData({
+									...registerData,
+									password: e.target.value,
+								})
+							}
 						/>
 						<TextField
 							id='passwordConfirm'
@@ -88,6 +133,13 @@ const Register = () => {
 							margin='dense'
 							InputLabelProps={{ shrink: true }}
 							variant='outlined'
+							value={registerData.password2}
+							onChange={(e) =>
+								setRegisterData({
+									...registerData,
+									password2: e.target.value,
+								})
+							}
 						/>
 						<Typography
 							variant='caption'
@@ -112,6 +164,7 @@ const Register = () => {
 								variant='contained'
 								size='medium'
 								color='primary'
+								onClick={handleSubmit}
 								className={classes.registerButton}>
 								Register
 							</Button>
@@ -119,6 +172,7 @@ const Register = () => {
 								variant='contained'
 								size='medium'
 								color='secondary'
+								onClick={clear}
 								className={classes.registerButton}>
 								Clear Form
 							</Button>

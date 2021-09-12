@@ -25,8 +25,7 @@ const TestUserInfo = () => {
 				variant='body2'
 				paragraph='true'
 				className={classes.testUserText}>
-				This will give you basic user access which will let you use the
-				Time Management System, post messages, reply to messages, and
+				This will give you basic user access which will let you post messages, reply to messages, and
 				view events!
 			</Typography>
 			<Typography

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	Container,
 	Grid,
@@ -16,11 +16,28 @@ import PropTypes from 'prop-types';
 
 import { useStyles } from './Login.Styles';
 
-const Login = (props) => {
+const Login = () => {
 	const classes = useStyles();
 	// I want to resize some fonts at breakpoints to avoid overflow!
 	const theme = useTheme();
 	const sizeMatches = useMediaQuery(theme.breakpoints.up('md'));
+
+	const [loginData, setLoginData] = useState({
+		username: '',
+		password: ''
+	})
+
+	const clear = () => {
+		setLoginData({
+			username: '',
+			password: ''
+		});
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log(loginData)
+	}
 
 	return (
 		<Container maxWidth='lg' className={classes.container}>
@@ -70,6 +87,13 @@ const Login = (props) => {
 							margin='normal'
 							InputLabelProps={{ shrink: true }}
 							variant='outlined'
+							value={loginData.username}
+							onChange={(e) =>
+								setLoginData({
+									...loginData,
+									username: e.target.value,
+								})
+							}
 						/>
 						<TextField
 							id='password'
@@ -81,6 +105,13 @@ const Login = (props) => {
 							margin='normal'
 							InputLabelProps={{ shrink: true }}
 							variant='outlined'
+							value={loginData.password}
+							onChange={(e) =>
+								setLoginData({
+									...loginData,
+									password: e.target.value,
+								})
+							}
 						/>
 						<Grid
 							container
@@ -88,6 +119,7 @@ const Login = (props) => {
 							<Button
 								variant='contained'
 								size='medium'
+								onClick={handleSubmit}
 								className={classes.loginButtonSubmit}>
 								Log In
 							</Button>
@@ -95,6 +127,7 @@ const Login = (props) => {
 								variant='contained'
 								size='medium'
 								color='secondary'
+								onClick={clear}
 								className={classes.loginButton}>
 								Clear
 							</Button>
