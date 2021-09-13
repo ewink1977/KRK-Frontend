@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { useStyles } from './Login.Styles';
+import Alerts from '../Alerts/Alerts';
 
 const Login = () => {
 	const classes = useStyles();
@@ -24,20 +25,20 @@ const Login = () => {
 
 	const [loginData, setLoginData] = useState({
 		username: '',
-		password: ''
-	})
+		password: '',
+	});
 
 	const clear = () => {
 		setLoginData({
 			username: '',
-			password: ''
+			password: '',
 		});
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(loginData)
-	}
+		console.log(loginData);
+	};
 
 	return (
 		<Container maxWidth='lg' className={classes.container}>
@@ -50,6 +51,7 @@ const Login = () => {
 			</Hidden>
 			<Grid item md={9} sm={12} className={classes.loginRight}>
 				<Grid item className={classes.loginHeaderBlock}>
+					<Alerts />
 					<Typography
 						variant='h1'
 						className={

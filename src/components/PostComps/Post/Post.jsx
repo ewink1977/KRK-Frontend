@@ -28,7 +28,7 @@ const Post = ({ post }) => {
 					<Avatar
 						className={classes.postHeaderAvatar}
 						sizes='lg'
-						src='https://cd-employeebbs-files.s3.amazonaws.com/profilePics/117260996_10158507766660420_153007114564909748_o_EtoVxuu.jpg?AWSAccessKeyId=AKIAYKWB4HILAVV26GWH&Signature=JZvMRgdbNaitZ3VxKQBHJKLh1i0%3D&Expires=1626320227'
+						src='https://cdn.douglasavenue.com/krk/temp/profile_pics/117260996_10158507766660420_153007114564909748_o.jpg'
 					/>
 					<Typography className={classes.postHeaderUsername}>
 						@ewink
