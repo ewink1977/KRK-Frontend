@@ -1,5 +1,6 @@
 import * as api from '../api';
 import { createMessage } from './messages';
+import { tokenConfig } from './auth';
 import { CREATE_NEW_POST, FETCH_ALL_POSTS, GET_ERRORS } from '../constants';
 
 // Action Creators
