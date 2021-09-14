@@ -1,10 +1,19 @@
-import { Grid, Typography, Button } from '@material-ui/core';
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { Grid, Typography, Button } from '@material-ui/core';
 
 import { useStyles } from './BBSUserPanel.Styles';
+import { logoutUser } from '../../../actions/auth';
 
 const BBSUserPanel = () => {
+	const dispatch = useDispatch();
 	const classes = useStyles();
+
+	const logout = () => {
+		dispatch(logoutUser());
+		console.log('Logout Was Clicked!');
+	};
+
 	return (
 		<div className={classes.userPanel}>
 			<Grid container className={classes.userPanelContainer}>
@@ -24,7 +33,11 @@ const BBSUserPanel = () => {
 				</Grid>
 			</Grid>
 			<Grid item className={classes.userOptions}>
-				<Button variant='outlined' color='primary' size='large'>
+				<Button
+					variant='outlined'
+					color='primary'
+					size='large'
+					onClick={logout}>
 					LOGOUT
 				</Button>
 			</Grid>
