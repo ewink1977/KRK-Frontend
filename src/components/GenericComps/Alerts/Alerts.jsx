@@ -1,29 +1,42 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Snackbar } from '@material-ui/core/';
-import { Alert } from '@material-ui/lab';
+import MuiAlert from '@material-ui/lab/Alert';
 
-const Alerts = () => {
-	const [open, setOpen] = useState(false);
+function Alert(props) {
+	return <MuiAlert elevation={6} variant='filled' {...props} />;
+}
+
+export default function CustomizedSnackbars() {
+	const [state, setState] = useState({
+		open: false,
+		vertical: 'top',
+		horizontal: 'center',
+	});
+
+	const { vertical, horizontal, open } = state;
 	const error = useSelector((state) => state.errors);
 
-	const handleClose = (e, reason) => {
-		if (reason === 'clickaway') {
-			return;
-		}
-		setOpen(false);
+	const dispatch = useDispatch();
+
+	// useEffect(() => {
+	// 	if (error.status) {
+	// 		console.log("Shit still isn't working and it's annoying me...");
+	// });
+
+	const handleClose = () => {
+		setState({ ...state, open: false });
 	};
 
-	if (error.status) {
-		console.log("This shit ain't working right");
-	}
 	return (
-		<Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-			<Alert severity='error' onClose={handleClose}>
+		<Snackbar
+			anchorOrigin={{ vertical, horizontal }}
+			open={open}
+			autoHideDuration={3000}
+			onClose={handleClose}>
+			<Alert onClose={handleClose} severity='error'>
 				This is a happy little test.
 			</Alert>
 		</Snackbar>
 	);
-};
-
-export default Alerts;
+}
