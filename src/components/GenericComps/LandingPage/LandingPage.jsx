@@ -81,7 +81,7 @@ const LandingPage = () => {
 							</CardContent>
 						</CardActionArea>
 						<CardActions>
-							<Button size='small' color='primary'>
+							<Button href='/login' size='small' color='primary'>
 								LOGIN/REGISTER
 							</Button>
 							<Button size='small' color='primary'>
@@ -125,7 +125,7 @@ const LandingPage = () => {
 							</CardContent>
 						</CardActionArea>
 						<CardActions>
-							<Button size='small' color='primary'>
+							<Button href='/login' size='small' color='primary'>
 								LOGIN/REGISTER
 							</Button>
 							<Button size='small' color='primary'>
@@ -168,7 +168,7 @@ const LandingPage = () => {
 							</CardContent>
 						</CardActionArea>
 						<CardActions>
-							<Button size='small' color='primary'>
+							<Button href='/login' size='small' color='primary'>
 								LOGIN/REGISTER
 							</Button>
 							<Button size='small' color='primary'>
@@ -195,10 +195,10 @@ const LandingPage = () => {
 						'testpassword' (without the quotes).
 					</Typography>
 					<Grid container className={classes.ctaButtonContainer}>
-						<Button size='small' color='secondary'>
+						<Button href='/login' size='small' color='secondary'>
 							LOGIN
 						</Button>
-						<Button size='small' color='secondary'>
+						<Button href='/register' size='small' color='secondary'>
 							REGISTER NEW ACCOUNT
 						</Button>
 					</Grid>
@@ -217,10 +217,16 @@ const LandingPage = () => {
 						emailing me!
 					</Typography>
 					<Grid container className={classes.ctaButtonContainer}>
-						<Button size='small' color='secondary'>
+						<Button
+							href='https://douglasavenue.com'
+							size='small'
+							color='secondary'>
 							MY PROFILE
 						</Button>
-						<Button size='small' color='secondary'>
+						<Button
+							href='https://github.com/ewink1977'
+							size='small'
+							color='secondary'>
 							MY GITHUB
 						</Button>
 						<Button size='small' color='secondary'>

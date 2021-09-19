@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AppBar, Grid, Button } from '@material-ui/core';
 import { useStyles } from './LandingHeader.Styles';
 
@@ -13,8 +14,12 @@ const Header = () => {
 				className={classes.menuIcon}
 			/>
 			<Grid className={classes.menuButton}>
-				<Button color='inherit'>Register</Button>
-				<Button color='inherit'>Login</Button>
+				<Button href='/register' color='inherit'>
+					Register
+				</Button>
+				<Button href='/login' color='inherit'>
+					Login
+				</Button>
 			</Grid>
 		</AppBar>
 	);
