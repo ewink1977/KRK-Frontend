@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { Fragment, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
 	Typography,
 	TextField,
@@ -16,25 +16,28 @@ import { createPost } from '../../../actions/posts';
 const AddPost = () => {
 	const dispatch = useDispatch();
 
+	const currentUser = useSelector((state) => state.auth.user);
+	console.log(currentUser);
+
 	const [postData, setPostData] = useState({
 		content: '',
-		distribution: '',
+		distribution: currentUser.userProfile.department,
 		priority: '',
-		author: 1,
+		author: currentUser.id,
 	});
+
 	const classes = useStyles();
 
 	const clear = () => {
 		setPostData({
 			content: '',
-			distribution: '',
+			distribution: currentUser.userProfile.department,
 			priority: '',
-			author: 1,
+			author: currentUser.id,
 		});
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
 		dispatch(createPost(postData));
 		clear();
 	};
@@ -65,59 +68,69 @@ const AddPost = () => {
 						}
 					/>
 					<Grid item className={classes.addPostButtonRow}>
-						<FormControl
-							variant='outlined'
-							margin='dense'
-							style={{ minWidth: '180px' }}
-							className={classes.addPostFormControl}>
-							<InputLabel id='distribution'>
-								Distribution
-							</InputLabel>
-							<Select
-								labelId='distribution'
-								id='select-distribution'
-								label='Distribution'
-								value={postData.distribution}
-								onChange={(e) =>
-									setPostData(
-										{
+						{currentUser.userProfile.access_level >= 2 ? (
+							<FormControl
+								variant='outlined'
+								margin='dense'
+								style={{ minWidth: '150px' }}
+								className={classes.addPostFormControl}>
+								<InputLabel id='distribution'>
+									Distribution
+								</InputLabel>
+								<Select
+									labelId='distribution'
+									id='select-distribution'
+									label='Distribution'
+									value={postData.distribution}
+									onChange={(e) =>
+										setPostData({
 											...postData,
 											distribution: e.target.value,
-										},
-										console.log(postData)
-									)
-								}>
-								<MenuItem value={9}>Storewide</MenuItem>
-								<MenuItem value={1}>Department One</MenuItem>
-								<MenuItem value={2}>Department Two</MenuItem>
-								<MenuItem value={3}>Department Three</MenuItem>
-								<MenuItem value={4}>Department Four</MenuItem>
-							</Select>
-						</FormControl>
-						<FormControl
-							variant='outlined'
-							margin='dense'
-							style={{ minWidth: '150px' }}
-							className={classes.addPostFormControl}>
-							<InputLabel id='priority'>Priority</InputLabel>
-							<Select
-								labelId='priority'
-								id='select-priority'
-								label='Priority'
-								value={postData.priority}
-								onChange={(e) =>
-									setPostData(
-										{
+										})
+									}>
+									<MenuItem value={9}>Storewide</MenuItem>
+									<MenuItem value={1}>
+										Department One
+									</MenuItem>
+									<MenuItem value={2}>
+										Department Two
+									</MenuItem>
+									<MenuItem value={3}>
+										Department Three
+									</MenuItem>
+									<MenuItem value={4}>
+										Department Four
+									</MenuItem>
+								</Select>
+							</FormControl>
+						) : (
+							<Fragment />
+						)}
+						{currentUser.userProfile.access_level >= 2 ? (
+							<FormControl
+								variant='outlined'
+								margin='dense'
+								style={{ minWidth: '150px' }}
+								className={classes.addPostFormControl}>
+								<InputLabel id='priority'>Priority</InputLabel>
+								<Select
+									labelId='priority'
+									id='select-priority'
+									label='Priority'
+									value={postData.priority}
+									onChange={(e) =>
+										setPostData({
 											...postData,
 											priority: e.target.value,
-										},
-										console.log(postData)
-									)
-								}>
-								<MenuItem value={1}>Normal</MenuItem>
-								<MenuItem value={2}>Sticky</MenuItem>
-							</Select>
-						</FormControl>
+										})
+									}>
+									<MenuItem value={1}>Normal</MenuItem>
+									<MenuItem value={2}>Sticky</MenuItem>
+								</Select>
+							</FormControl>
+						) : (
+							<Fragment />
+						)}
 						<Button
 							variant='contained'
 							color='primary'

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import {
 	AppBar,
 	Grid,
@@ -10,6 +11,8 @@ import {
 import { useStyles } from './MainHeader.Styles';
 
 const MainHeader = () => {
+	const currentUser = useSelector((state) => state.auth.user);
+
 	const classes = useStyles();
 	return (
 		<AppBar position='sticky' className={classes.appBar}>
@@ -27,11 +30,13 @@ const MainHeader = () => {
 			</Grid>
 			<Grid item>
 				<Grid container className={classes.userPanelContainer}>
-					<Typography variant='h6'>@ewink</Typography>
+					<Typography variant='h6'>
+						@{currentUser.username}
+					</Typography>
 					<IconButton style={{ padding: '6px' }}>
 						<Avatar
-							alt='Username'
-							src='https://cdn.douglasavenue.com/krk/temp/profile_pics/117260996_10158507766660420_153007114564909748_o.jpg'
+							alt={currentUser.username}
+							src={currentUser.userProfile.image}
 						/>
 					</IconButton>
 				</Grid>
