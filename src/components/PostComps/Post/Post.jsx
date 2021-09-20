@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { useSelector } from 'react-redux';
 import {
 	Card,
 	CardContent,
@@ -7,6 +8,7 @@ import {
 	Divider,
 	Hidden,
 	IconButton,
+	Badge,
 } from '@material-ui/core';
 import moment from 'moment';
 import Reply from '@material-ui/icons/Reply';
@@ -17,7 +19,10 @@ import { Link } from 'react-router-dom';
 import { useStyles } from './Post.Styles';
 
 const Post = ({ post }) => {
+	const currentUser = useSelector((state) => state.auth);
 	const classes = useStyles();
+	console.log(post);
+	const accessLevel = currentUser.user.userProfile.access_level;
 	return (
 		<Fragment>
 			<Card
@@ -28,14 +33,14 @@ const Post = ({ post }) => {
 					<Avatar
 						className={classes.postHeaderAvatar}
 						sizes='lg'
-						src='https://cdn.douglasavenue.com/krk/temp/profile_pics/117260996_10158507766660420_153007114564909748_o.jpg'
+						src={post.author.userProfile.image}
 					/>
 					<Typography className={classes.postHeaderUsername}>
-						@ewink
+						@{post.author.username}
 					</Typography>
 					<Hidden xsDown>
 						<Typography className={classes.postHeaderFullName}>
-							Erin Winking
+							{post.author.first_name} {post.author.last_name}
 						</Typography>
 					</Hidden>
 				</CardContent>
@@ -49,7 +54,7 @@ const Post = ({ post }) => {
 								'dddd, MMMM Do YYYY, h:mm:ss a'
 							)}
 						</Link>{' '}
-						| Delete Post
+						{accessLevel >= 2 ? '| Delete Post' : ' '}
 					</Typography>
 				</CardContent>
 				<Divider variant='middle' />
@@ -57,12 +62,22 @@ const Post = ({ post }) => {
 					<IconButton>
 						<Reply fontSize='large' style={{ color: blue[900] }} />
 					</IconButton>
+
 					<IconButton>
 						<Favorite
 							fontSize='large'
-							style={{ color: pink[500] }}
+							style={{ color: pink[300] }}
 						/>
+						{post.likes ? (
+							<Badge
+								badgeContent={post.likes.length}
+								color='secondary'
+							/>
+						) : (
+							''
+						)}
 					</IconButton>
+
 					<Info fontSize='large' style={{ color: red[900] }} />
 				</CardContent>
 			</Card>
