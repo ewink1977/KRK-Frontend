@@ -1,4 +1,5 @@
 export const FETCH_ALL_POSTS = 'FETCH_ALL_POSTS';
+export const FETCH_SINGLE_POST = 'FETCH_SINGLE_POST';
 export const CREATE_NEW_POST = 'CREATE_NEW_POST';
 export const GET_ERRORS = 'GET_ERRORS';
 export const CREATE_MESSAGE = 'CREATE_MESSAGE';

@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { useSelector } from 'react-redux';
+import React, { Fragment, useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {
 	Card,
 	CardContent,
@@ -17,12 +17,39 @@ import Info from '@material-ui/icons/Info';
 import { blue, pink, red } from '@material-ui/core/colors';
 import { Link } from 'react-router-dom';
 import { useStyles } from './Post.Styles';
+import { getPostAuthorData } from '../../../actions/posts';
 
 const Post = ({ post }) => {
 	const currentUser = useSelector((state) => state.auth);
 	const classes = useStyles();
-	console.log(post);
 	const accessLevel = currentUser.user.userProfile.access_level;
+	const [authorData, setAuthorData] = useState({
+		first_name: '',
+		last_name: '',
+		username: '',
+		image: '',
+	});
+	useEffect(() => {
+		const url = `http://127.0.0.1:8000/api/postauthor/${post.author}`;
+
+		const fetchData = async () => {
+			try {
+				const response = await fetch(url);
+				const postAuthorInfo = await response.json();
+				setAuthorData({
+					first_name: postAuthorInfo.first_name,
+					last_name: postAuthorInfo.last_name,
+					username: postAuthorInfo.username,
+					image: postAuthorInfo.userProfile.image,
+				});
+				console.log(authorData);
+			} catch (error) {
+				console.log('error', error);
+			}
+		};
+
+		fetchData();
+	}, []);
 	return (
 		<Fragment>
 			<Card
@@ -33,14 +60,14 @@ const Post = ({ post }) => {
 					<Avatar
 						className={classes.postHeaderAvatar}
 						sizes='lg'
-						src={post.author.userProfile.image}
+						src={authorData.image}
 					/>
 					<Typography className={classes.postHeaderUsername}>
-						@{post.author.username}
+						@{authorData.username}
 					</Typography>
 					<Hidden xsDown>
 						<Typography className={classes.postHeaderFullName}>
-							{post.author.first_name} {post.author.last_name}
+							{authorData.first_name} {authorData.last_name}
 						</Typography>
 					</Hidden>
 				</CardContent>

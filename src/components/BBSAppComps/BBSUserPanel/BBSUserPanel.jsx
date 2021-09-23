@@ -32,7 +32,7 @@ const BBSUserPanel = () => {
 						{currentUser.first_name} {currentUser.last_name}
 					</Typography>
 					<Typography variant='h5'>
-						Department Here Eventually
+						{currentUser.userProfile.position}
 					</Typography>
 				</Grid>
 			</Grid>

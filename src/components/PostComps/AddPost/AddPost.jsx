@@ -17,12 +17,11 @@ const AddPost = () => {
 	const dispatch = useDispatch();
 
 	const currentUser = useSelector((state) => state.auth.user);
-	console.log(currentUser);
 
 	const [postData, setPostData] = useState({
 		content: '',
 		distribution: currentUser.userProfile.department,
-		priority: '',
+		priority: 1,
 		author: currentUser.id,
 	});
 

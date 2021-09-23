@@ -1,10 +1,16 @@
-import { CREATE_NEW_POST, FETCH_ALL_POSTS } from '../constants';
+import {
+	CREATE_NEW_POST,
+	FETCH_ALL_POSTS,
+	FETCH_SINGLE_POST,
+	POST_AUTHOR_DATA,
+} from '../constants';
 
 const initialState = [];
 
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case FETCH_ALL_POSTS:
+		case FETCH_SINGLE_POST:
 			return action.payload;
 		case CREATE_NEW_POST:
 			return [...state, action.payload];
