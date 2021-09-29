@@ -16,6 +16,7 @@ import { returnErrors } from './messages';
 export const loadUser = () => (dispatch, getState) => {
 	// SET USER LOADING
 	dispatch({ type: USER_LOADING });
+	console.log('Loading user...');
 	axios
 		.get(api.authUserUrl, tokenConfig(getState))
 		.then((res) => {

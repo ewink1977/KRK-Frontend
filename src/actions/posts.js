@@ -7,7 +7,6 @@ import {
 	FETCH_ALL_POSTS,
 	FETCH_SINGLE_POST,
 	GET_ERRORS,
-	POST_AUTHOR_DATA,
 } from '../constants';
 
 // Action Creators

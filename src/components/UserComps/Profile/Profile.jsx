@@ -67,11 +67,11 @@ const Profile = () => {
 						style={{ fontWeight: '800' }}>
 						ewink's Posts
 					</Typography>
-					<Post />
-					<Post />
-					<Post />
-					<Post />
-					<Post />
+					<h3>POST</h3>
+					<h3>POST</h3>
+					<h3>POST</h3>
+					<h3>POST</h3>
+					<h3>POST</h3>
 				</Grid>
 				<Grid item md={6} className={classes.userPostColumn}>
 					<Typography
@@ -80,11 +80,11 @@ const Profile = () => {
 						style={{ fontWeight: '800' }}>
 						ewink's last 5 replies
 					</Typography>
-					<Post />
-					<Post />
-					<Post />
-					<Post />
-					<Post />
+					<h3>REPLY</h3>
+					<h3>REPLY</h3>
+					<h3>REPLY</h3>
+					<h3>REPLY</h3>
+					<h3>REPLY</h3>
 				</Grid>
 			</Grid>
 		</Container>

@@ -5,7 +5,7 @@ import BBSMainApp from './components/BBSAppComps/BBSMainApp/BBSMainApp';
 import LandingPage from './components/GenericComps/LandingPage/LandingPage';
 import Login from './components/GenericComps/Login/Login';
 import Register from './components/GenericComps/Register/Register';
-import PrivateRoute from './components/GenericComps/PrivateRoute/PrivateRoute';
+// import PrivateRoute from './components/GenericComps/PrivateRoute/PrivateRoute';
 import { loadUser } from './actions/auth';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
 	useEffect(() => {
 		dispatch(loadUser());
-	}, [dispatch]);
+	}, []);
 
 	return (
 		<Router>
@@ -22,7 +22,7 @@ function App() {
 					<Route exact path='/' component={LandingPage} />
 					<Route path='/login' component={Login} />
 					<Route path='/register' component={Register} />
-					<PrivateRoute exact path='/bbs' component={BBSMainApp} />
+					<Route exact path='/bbs' component={BBSMainApp} />
 				</Switch>
 			</div>
 		</Router>

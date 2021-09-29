@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { AppBar, Grid, Button } from '@material-ui/core';
 import { useStyles } from './LandingHeader.Styles';
 

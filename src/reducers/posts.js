@@ -2,7 +2,6 @@ import {
 	CREATE_NEW_POST,
 	FETCH_ALL_POSTS,
 	FETCH_SINGLE_POST,
-	POST_AUTHOR_DATA,
 } from '../constants';
 
 const initialState = [];

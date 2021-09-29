@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
 	Card,
 	CardContent,
@@ -17,11 +17,11 @@ import Info from '@material-ui/icons/Info';
 import { blue, pink, red } from '@material-ui/core/colors';
 import { Link } from 'react-router-dom';
 import { useStyles } from './Post.Styles';
-import { getPostAuthorData } from '../../../actions/posts';
 
 const Post = ({ post }) => {
-	const currentUser = useSelector((state) => state.auth);
+	const postAuthor = post.author;
 	const classes = useStyles();
+	const currentUser = useSelector((state) => state.auth);
 	const accessLevel = currentUser.user.userProfile.access_level;
 	const [authorData, setAuthorData] = useState({
 		first_name: '',
@@ -30,9 +30,9 @@ const Post = ({ post }) => {
 		image: '',
 	});
 	useEffect(() => {
-		const url = `http://127.0.0.1:8000/api/postauthor/${post.author}`;
+		const url = `http://127.0.0.1:8000/api/postauthor/${postAuthor}`;
 
-		const fetchData = async () => {
+		const fetchAuthorData = async () => {
 			try {
 				const response = await fetch(url);
 				const postAuthorInfo = await response.json();
@@ -42,14 +42,13 @@ const Post = ({ post }) => {
 					username: postAuthorInfo.username,
 					image: postAuthorInfo.userProfile.image,
 				});
-				console.log(authorData);
 			} catch (error) {
 				console.log('error', error);
 			}
 		};
 
-		fetchData();
-	}, []);
+		fetchAuthorData();
+	}, [post]);
 	return (
 		<Fragment>
 			<Card

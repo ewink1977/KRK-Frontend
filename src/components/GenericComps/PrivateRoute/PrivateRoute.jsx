@@ -11,16 +11,14 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 			render={(props) => {
 				if (auth.isLoading) {
 					return <CircularProgress />;
-				} else if (!auth.isAuthenticated) {
-					return <Redirect to='/login' />;
-				} else {
+				} else if (auth.isAuthenticated) {
 					return <Component {...props} />;
+				} else {
+					return <Redirect to='/login' />;
 				}
 			}}
 		/>
 	);
 };
-
-
 
 export default PrivateRoute;
